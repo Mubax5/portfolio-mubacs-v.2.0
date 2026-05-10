@@ -193,9 +193,10 @@ Build Cloudflare:
 
 File deploy:
 - `wrangler.toml`: deploy sebagai Cloudflare Workers Static Assets dari folder `dist`.
-- `public/_redirects`: fallback route React Router supaya `/porto-dev/...` dan `/porto-visual/...` tidak 404.
+- `not_found_handling = "single-page-application"` di `wrangler.toml`: fallback route React Router supaya `/porto-dev/...` dan `/porto-visual/...` tidak 404.
 
 Catatan:
 - Jangan pakai `npx wrangler deploy` tanpa `wrangler.toml`, nanti Wrangler auto-detect Vite dan bisa minta Vite 6.
 - Jangan pakai `npx wrangler pages deploy...` di form Worker Build kalau token Cloudflare tidak punya Pages Edit.
+- Jangan pakai `public/_redirects` untuk deploy Workers Static Assets ini, karena rule `/* /index.html 200` bisa dianggap infinite loop oleh Cloudflare.
 - Warning chunk `>500 kB`, `npm audit`, dan deprecated package tidak bikin deploy gagal.
