@@ -183,3 +183,19 @@ Rule penting:
 - Untuk container `aspect-[4/3]`, pakai gambar `4:3`.
 - Untuk container `aspect-[16/8]`, pakai gambar `2:1`.
 - Kalau gambar terasa kepotong, ubah `object-cover` jadi `object-contain`, tapi layout jadi ada ruang kosong.
+
+## Cloudflare Deploy
+
+Build Cloudflare:
+- Build command: `npm run build`.
+- Deploy command untuk form yang wajib diisi: `npx wrangler deploy`.
+- Root/path: `/`.
+
+File deploy:
+- `wrangler.toml`: deploy sebagai Cloudflare Workers Static Assets dari folder `dist`.
+- `public/_redirects`: fallback route React Router supaya `/porto-dev/...` dan `/porto-visual/...` tidak 404.
+
+Catatan:
+- Jangan pakai `npx wrangler deploy` tanpa `wrangler.toml`, nanti Wrangler auto-detect Vite dan bisa minta Vite 6.
+- Jangan pakai `npx wrangler pages deploy...` di form Worker Build kalau token Cloudflare tidak punya Pages Edit.
+- Warning chunk `>500 kB`, `npm audit`, dan deprecated package tidak bikin deploy gagal.

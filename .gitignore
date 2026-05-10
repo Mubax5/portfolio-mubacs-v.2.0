@@ -2,6 +2,7 @@ node_modules/
 dist/
 test-artifacts/
 *.tsbuildinfo
+.wrangler/
 
 .env
 .env.*
