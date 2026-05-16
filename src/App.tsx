@@ -14,6 +14,7 @@ import DevProjectDetail from "./pages/DevProjectDetail";
 import PortoVisual from "./pages/PortoVisual";
 import CreativeCategoryPage from "./pages/CreativeCategoryPage";
 import CreativeOrganizationPage from "./pages/CreativeOrganizationPage";
+import SkillDetailPage from "./pages/SkillDetailPage";
 
 function AppContent() {
   const [openingComplete, setOpeningComplete] = useState(false);
@@ -100,6 +101,7 @@ function AppContent() {
           <Route path="/porto-visual" element={<PortoVisual />} />
           <Route path="/porto-visual/:category" element={<CreativeCategoryPage />} />
           <Route path="/porto-visual/:category/:organizationSlug" element={<CreativeOrganizationPage />} />
+          <Route path="/skills/:slug" element={<SkillDetailPage />} />
         </Routes>
       </PageTransition>
       {!openingComplete && (

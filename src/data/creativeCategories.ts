@@ -8,44 +8,38 @@ export interface CreativeCategory {
 export const creativeCategories: CreativeCategory[] = [
   {
     id: 1,
-    title: "Design",
-    slug: "design",
-    description:
-      "Visual design archives for organizations, institutions, and brands \u2014 layouts, posters, and communication materials.",
+    title: "Personal Project",
+    slug: "personal-project",
+    description: "Semua visual personal project dari folder lokal.",
   },
   {
     id: 2,
-    title: "GMV",
-    slug: "gmv",
-    description:
-      "Short-form video edits, visual rhythm pieces, and motion-aware content for social and digital channels.",
+    title: "Design",
+    slug: "design",
+    description: "Piforia, OSBA, BEM PNC, Ifest, PKKMB, Diesnatalis, dan folder design lain.",
   },
   {
     id: 3,
-    title: "Brand Visual",
-    slug: "brand-visual",
-    description:
-      "Brand identity systems, visual guidelines, logo treatments, and cohesive design language.",
+    title: "GMV",
+    slug: "gmv",
+    description: "Video GMV dari Instagram Reels dan YouTube Shorts.",
   },
   {
     id: 4,
-    title: "Social Media",
-    slug: "social-media",
-    description:
-      "Social media layouts, carousel designs, story templates, and content systems for consistent posting.",
+    title: "Logo/Brand Visual",
+    slug: "brand-identity",
+    description: "Logo dan brand visual, ditampilkan sebagai gallery next/previous.",
   },
   {
     id: 5,
-    title: "Poster / Illustration",
-    slug: "poster-illustration",
-    description:
-      "Event posters, editorial illustrations, and visual compositions with typographic focus.",
+    title: "Other",
+    slug: "other",
+    description: "Semua asset dari folder Other.",
   },
   {
     id: 6,
     title: "UI Visual Exploration",
-    slug: "ui-visual",
-    description:
-      "Interface mood boards, UI concept explorations, dashboard layouts, and visual-first interface studies.",
+    slug: "ui-visual-exploration",
+    description: "IMK dan SIAKAD PNC visual exploration.",
   },
 ];

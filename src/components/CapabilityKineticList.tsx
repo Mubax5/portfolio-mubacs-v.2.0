@@ -3,28 +3,20 @@ import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { skills } from "../data/skills";
+import { ToolBadge } from "./ToolLogo";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function CapabilityKineticList() {
   const ref = useRef<HTMLElement>(null);
-  const list = [
-    { name: "Frontend Interface", link: "/porto-dev" },
-    { name: "Product Dashboard", link: "/porto-dev" },
-    { name: "CMS Architecture", link: "/porto-dev" },
-    { name: "Visual Identity", link: "/porto-visual" },
-    { name: "Layout System", link: "/porto-visual" },
-    { name: "Creative Direction", link: "/porto-visual" },
-    { name: "AI-assisted Workflow", link: "/porto-dev" },
-    { name: "Editorial Web Design", link: "/porto-visual" },
-  ];
   const [hovered, setHovered] = useState<number | null>(null);
 
   useGSAP(() => {
     if (!ref.current) return;
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        "[data-capability-row]",
+        "[data-skill-row]",
         { autoAlpha: 0, y: 76, filter: "blur(30px)" },
         {
           autoAlpha: 1,
@@ -42,8 +34,8 @@ export default function CapabilityKineticList() {
         }
       );
 
-      gsap.to("[data-capability-row]", {
-        y: (i) => (i % 2 === 0 ? -34 : -18),
+      gsap.to("[data-skill-row]", {
+        y: (i) => (i % 2 === 0 ? -28 : -14),
         ease: "none",
         scrollTrigger: {
           trigger: ref.current,
@@ -58,22 +50,30 @@ export default function CapabilityKineticList() {
 
   return (
     <section ref={ref} className="relative z-10 px-5 pb-24 pt-6 md:px-12 md:pb-28 md:pt-8">
-      <p className="mono-label mb-12">05 / Capabilities</p>
+      <p className="mono-label mb-12">05 / Skills</p>
       <div className="space-y-0">
-        {list.map((item, i) => (
+        {skills.map((item, i) => (
           <Link
-            key={item.name}
-            to={item.link}
-            data-capability-row
-            className="group relative block overflow-hidden border-b border-base-900 py-6 transition-colors hover:border-base-600"
+            key={item.slug}
+            to={`/skills/${item.slug}`}
+            data-skill-row
+            className="group relative block overflow-hidden border-b border-base-900 py-6 transition-colors hover:border-base-500"
             onMouseEnter={() => setHovered(i)}
             onMouseLeave={() => setHovered(null)}
             data-cursor-hover
             data-cursor-label="EXPLORE"
           >
-            <div className={`flex items-center justify-between transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${hovered === i ? "text-white translate-x-4 md:translate-x-6" : hovered !== null ? "text-base-600" : "text-base-200"}`}>
-              <span className="text-section font-semibold uppercase transition-colors md:text-5xl">{item.name}</span>
+            <div className={`grid gap-4 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] md:grid-cols-[0.84fr_0.62fr_auto] md:items-center ${hovered === i ? "translate-x-2 text-white md:translate-x-5" : hovered !== null ? "text-base-600" : "text-base-200"}`}>
+              <span className="text-4xl font-semibold uppercase leading-none transition-colors sm:text-5xl md:text-6xl">{item.title}</span>
+              <span className="max-w-md text-sm leading-relaxed text-base-500">{item.summary}</span>
               <span className="hidden font-mono text-xs text-base-600 md:block">View</span>
+            </div>
+            <div className={`mt-4 flex flex-wrap gap-2 overflow-hidden transition-all duration-700 ${hovered === i ? "max-h-32 opacity-100" : "max-h-0 opacity-0"}`}>
+              {item.tools.slice(0, 7).map((tool) => (
+                <span key={tool} className="border border-white/20 bg-white px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.16em] text-black">
+                  <ToolBadge tool={tool} tone="dark" />
+                </span>
+              ))}
             </div>
             <div className="mt-4 h-px bg-white transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]" style={{ width: hovered === i ? "100%" : "0%" }} />
           </Link>

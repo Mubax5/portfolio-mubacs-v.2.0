@@ -67,7 +67,7 @@ export default function GlobalTextMotion({ routeKey }: { routeKey: string }) {
           "--text-reveal-y": "62px",
           "--text-parallax-y": "20px",
           autoAlpha: 0,
-          filter: "blur(28px)",
+          filter: "blur(58px)",
         });
 
         ScrollTrigger.batch(targets, {
@@ -78,7 +78,7 @@ export default function GlobalTextMotion({ routeKey }: { routeKey: string }) {
               "--text-reveal-y": "0px",
               autoAlpha: 1,
               filter: "blur(0px)",
-              duration: 1.45,
+              duration: 2.45,
               ease: "power4.out",
               stagger: 0.065,
               onComplete: () => {
