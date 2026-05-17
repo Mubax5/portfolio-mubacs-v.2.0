@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { FileText } from "lucide-react";
 import { profile } from "../data/profile";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -63,6 +64,18 @@ export default function HeroStage({ reveal = true }: { reveal?: boolean }) {
         ))}
       </div>
       <p className={`relative z-30 mt-8 max-w-xl text-lg font-medium text-white mix-blend-difference transition-all duration-[1150ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${metaRevealClass}`} data-hero-meta>Creative technologist and web developer shaping clean interfaces, useful systems, and visual work with restraint.</p>
+      <div data-hero-meta className={`relative z-30 mt-7 transition-all duration-[1150ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${metaRevealClass}`}>
+        <a
+          href={profile.cv}
+          target="_blank"
+          rel="noreferrer"
+          className="group inline-flex w-fit items-center gap-3 border border-white/15 bg-black/35 px-5 py-3 font-mono text-[10px] uppercase tracking-[0.22em] text-base-200 backdrop-blur-md transition-all duration-300 hover:border-white hover:bg-white hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+          data-cursor-label="CV"
+        >
+          <FileText className="h-3.5 w-3.5" aria-hidden="true" />
+          <span>View CV</span>
+        </a>
+      </div>
       <div ref={hintRef} data-scroll-hint className={`mt-16 font-mono text-[10px] uppercase tracking-[0.3em] text-base-600 transition-all duration-[950ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${hintRevealClass}`}>Scroll / Let it move</div>
     </section>
   );

@@ -6,11 +6,11 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 const lines = [
-  "Quiet things",
-  "for the web.",
-  "Code with rhythm.",
-  "Systems with clarity.",
-  "Visual weight, no noise.",
+  "Builds",
+  "Quiet Thing,",
+  "cuz",
+  "The Silent",
+  "So Loud.",
 ];
 
 export default function ManifestoScene() {

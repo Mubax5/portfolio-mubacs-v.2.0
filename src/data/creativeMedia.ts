@@ -123,7 +123,7 @@ const designGroups: CreativeDesignGroup[] = [
   designGroup(
     "Piforia",
     "Selamanya",
-    "Visual angkatan 4 SMA Islam Al Azhar 24.",
+    "Visual identity and social media for Batch 4 of SMA Islam Al Azhar 24.",
     imgList("design", ["Design", "Piforia"], [
       "[Pifouria] Eligiboy - Fabyan.webp",
       "[Pifouria] Eligiboy - Ghalib.webp",
@@ -136,7 +136,7 @@ const designGroups: CreativeDesignGroup[] = [
   designGroup(
     "OSBA",
     "2021 - 2023",
-    "Organisasi Santri Boarding Al Azhar, OSIS SMA Islam Al Azhar 24.",
+    "Event banners, certificates, and materials for the student council of SMA Islam Al Azhar 24.",
     [
       ...imgList("design", ["Design", "OSBA"], [
         "Cover - Belajar Design Bareng 2023-2024.webp",
@@ -158,7 +158,7 @@ const designGroups: CreativeDesignGroup[] = [
   designGroup(
     "BEM PNC 2024/2025",
     "2024 - 2025",
-    "Visual komunikasi BEM PNC periode 2024/2025, termasuk Duta Kampus PNC 2025 dan Bulan Pelatihan 2025.",
+    "Publications, issue studies, and working program of BEM PNC.",
     [
       ...imgList("design", ["Design", "BEM", "2025"], [
         "Cover - FKMPI.webp",
@@ -210,7 +210,7 @@ const designGroups: CreativeDesignGroup[] = [
   designGroup(
     "BEM PNC 2025/2026",
     "2025 - 2026",
-    "Visual komunikasi BEM PNC periode 2025/2026, termasuk Open Recruitment, Audiensi Terbuka, dan September Hitam.",
+    "Staff recruitment, audition forum, and issue studies for BEM PNC.",
     [
       ...imgList("design", ["Design", "BEM", "2026"], [
         "Cover - Berita Acara Sidang PO 25-26.webp",
@@ -272,8 +272,8 @@ const designGroups: CreativeDesignGroup[] = [
   ),
   designGroup(
     "Ifest Vol 17",
-    "Mei 2025 / Koordinator",
-    "Diesnatalis Prodi Teknik Informatika.",
+    "2025",
+    "Event branding, lanyard, and templates for Informatics Festival Vol 17.",
     imgList("design", ["Design", "Ifest"], [
       "Banner Digital IFEST_.webp",
       "Lanyard.jpg",
@@ -285,8 +285,8 @@ const designGroups: CreativeDesignGroup[] = [
   ),
   designGroup(
     "PKKMB PNC 2025",
-    "Juli - Agustus 2025 / Koordinator",
-    "Visual system dan kebutuhan publikasi PKKMB PNC 2025.",
+    "2025",
+    "Visual system, lanyard, twibbon, and templates for new-student orientation.",
     imgList("design", ["Design", "PKKMB"], [
       "Lanyard.webp",
       "New post Story PKKMB 2025.webp",
@@ -304,8 +304,8 @@ const designGroups: CreativeDesignGroup[] = [
   ),
   designGroup(
     "Diesnatalis PNC 2025",
-    "September - Oktober 2025",
-    "Visual panggung, gate, blueprint, dan publication scroll Diesnatalis PNC.",
+    "2025",
+    "Stage blueprint, gate design, and publication materials for PNC anniversary.",
     imgList("design", ["Design", "Diesnatalis", "Blueprint"], [
       "Desain Gate@2x.webp",
       "Desain Stage Dies Natalis PNC @2x.webp",
@@ -320,7 +320,7 @@ const designGroups: CreativeDesignGroup[] = [
   designGroup(
     "Madani Montessori",
     "Brand Visual",
-    "Brand guideline dan visual pendukung dari folder Design.",
+    "Brand guideline and visual system for Madani Montessori Islamic School.",
     [
       localImage("design", ["Design", "Madani montessori", "Instagram post.webp"], "Madani Montessori"),
       ...imgList("design", ["Design", "Madani montessori", "Visual"], [
@@ -360,20 +360,23 @@ const brandIdentityItems = [
 
 const otherItems = [
   localImage("other", ["Other", "Backdrop Pelatihan Digital Marketing - Baznaz Kabupaten Cilacap Rvs 6.webp"], "Baznas Kabupaten Cilacap", "Backdrop Pelatihan Digital Marketing - Baznas Kabupaten Cilacap", { fit: "contain" }),
+  localImage("other", ["Other", "Welcome Feed Infinitech.webp"], "Infinitech", "Welcome Feed Infinitech", { fit: "contain" }),
+  localImage("other", ["Other", "Thumbnail Gigs Fiverr.webp"], "Fiverr", "Thumbnail Gigs Fiverr", { fit: "contain" }),
+  localImage("other", ["Other", "Thumbnail Gigs Fiverr Slide 1.webp"], "Fiverr", "Thumbnail Gigs Fiverr Slide 1", { fit: "contain" }),
 ];
 
 const uiGroups: CreativeDesignGroup[] = [
   designGroup(
     "IMK",
     "2024",
-    "Make-over Yale University of Art website. Dibuat sebagai scroll visual agar file tinggi tetap kebaca jelas.",
+    "Yale University of Art website redesign — HCI course case study.",
     [localImage("ui-visual-exploration", ["UI Visual Exploration", "IMK - Make Over YALE UNIVERSITY OF ART Website.webp"], "IMK", "IMK - Make Over YALE UNIVERSITY OF ART Website", { fit: "cover", objectPosition: "top" })],
     [localImage("ui-visual-exploration", ["UI Visual Exploration", "IMK - Make Over YALE UNIVERSITY OF ART Website.webp"], "IMK", "IMK - Full Scroll")]
   ),
   designGroup(
     "Siakad PNC",
     "2025",
-    "Unofficial team project. Asset belum ada di folder visual saat ini.",
+    "UI exploration for PNC academic information system.",
     [],
     []
   ),
@@ -383,14 +386,14 @@ export const creativeCollections: CreativeCollection[] = [
   {
     title: "Personal Project",
     slug: "personal-project",
-    description: "Semua visual dari folder Personal Project.",
+    description: "Experimental visuals and personal work.",
     layout: "masonry",
     items: personalProjectItems,
   },
   {
     title: "Design",
     slug: "design",
-    description: "Semua desain dari folder Design, mengikuti struktur folder dan timeline project.",
+    description: "Event campaigns and publication design.",
     layout: "design-scroll",
     items: designItems,
     groups: designGroups,
@@ -398,7 +401,7 @@ export const creativeCollections: CreativeCollection[] = [
   {
     title: "GMV",
     slug: "gmv",
-    description: "GMV dan short-form edit dari Instagram Reels dan YouTube Shorts.",
+    description: "Short-form video edits for social media.",
     layout: "video",
     items: [
       video("Instagram Reel / GMV", "https://www.instagram.com/reel/DAXTRhXy7Hm/", "https://www.instagram.com/reel/DAXTRhXy7Hm/embed", "Instagram"),
@@ -408,21 +411,21 @@ export const creativeCollections: CreativeCollection[] = [
   {
     title: "Logo/Brand Visual",
     slug: "brand-identity",
-    description: "Logo dan brand visual dari folder Logo, ditambah asset brand terkait yang ada di folder visual.",
+    description: "Logo and brand identity systems.",
     layout: "brand-grid",
     items: brandIdentityItems,
   },
   {
     title: "Other",
     slug: "other",
-    description: "Semua visual dari folder Other.",
+    description: "Freelance, gig thumbnails, event backdrop, and extra visual experiments.",
     layout: "masonry",
     items: otherItems,
   },
   {
     title: "UI Visual Exploration",
     slug: "ui-visual-exploration",
-    description: "Eksplorasi UI dari folder UI Visual Exploration.",
+    description: "Interface redesign, website makeover, layout study, and product screen exploration.",
     layout: "ui-scroll",
     items: uiGroups.flatMap((group) => [...group.items, ...group.scrollItems]),
     groups: uiGroups,

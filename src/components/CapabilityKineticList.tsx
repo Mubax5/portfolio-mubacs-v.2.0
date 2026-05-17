@@ -68,8 +68,8 @@ export default function CapabilityKineticList() {
               <span className="max-w-md text-sm leading-relaxed text-base-500">{item.summary}</span>
               <span className="hidden font-mono text-xs text-base-600 md:block">View</span>
             </div>
-            <div className={`mt-4 flex flex-wrap gap-2 overflow-hidden transition-all duration-700 ${hovered === i ? "max-h-32 opacity-100" : "max-h-0 opacity-0"}`}>
-              {item.tools.slice(0, 7).map((tool) => (
+            <div data-text-motion-ignore className={`mt-4 flex flex-wrap gap-2 overflow-hidden transition-all duration-700 ${hovered === i ? "max-h-40 opacity-100" : "max-h-0 opacity-0"}`}>
+              {item.tools.map((tool) => (
                 <span key={tool} className="border border-white/20 bg-white px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.16em] text-black">
                   <ToolBadge tool={tool} tone="dark" />
                 </span>

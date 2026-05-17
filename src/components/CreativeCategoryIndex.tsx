@@ -1,12 +1,67 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Play } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { creativeCollections } from "../data/creativeMedia";
+import type { CreativeCollection } from "../data/creativeMedia";
 
 gsap.registerPlugin(ScrollTrigger);
+
+function CollectionPreview({ collection, index }: { collection: CreativeCollection; index: number }) {
+  const heights = ["min-h-[28rem]", "min-h-[22rem]", "min-h-[25rem]", "min-h-[20rem]", "min-h-[24rem]", "min-h-[30rem]"];
+  const n = String(index + 1).padStart(2, "0");
+  const glyphs = [
+    [
+      { className: "col-span-2 row-span-2 bg-white text-black", label: n, scale: "mega" },
+      { className: "bg-base-900 text-base-500", label: "////", scale: "mono" },
+      { className: "row-span-2 bg-base-850 text-base-300", label: "AX", scale: "tall" },
+      { className: "col-span-2 bg-base-950 text-base-500", label: "00.0", scale: "mono" },
+      { className: "bg-base-800 text-base-300", label: "X", scale: "mark" },
+      { className: "col-span-2 bg-base-900 text-base-400", label: "X/0 X/0", scale: "mono" },
+    ],
+    [
+      { className: "row-span-2 bg-base-900 text-base-400", label: "I", scale: "tall" },
+      { className: "col-span-2 bg-white text-black", label: n, scale: "wide" },
+      { className: "col-span-2 row-span-2 bg-base-950 text-base-300", label: "K-0", scale: "mega" },
+      { className: "bg-base-800 text-base-300", label: "11", scale: "mark" },
+      { className: "col-span-3 bg-base-900 text-base-500", label: "///// ////", scale: "mono" },
+    ],
+    [
+      { className: "col-span-3 bg-base-850 text-base-300", label: "//// //// ////", scale: "mono" },
+      { className: "col-span-2 row-span-3 bg-white text-black", label: n, scale: "mega" },
+      { className: "bg-base-950 text-base-500", label: "A", scale: "mark" },
+      { className: "bg-base-900 text-base-500", label: "B", scale: "mark" },
+      { className: "bg-base-800 text-base-300", label: "C", scale: "mark" },
+    ],
+  ];
+  const cells = glyphs[index % glyphs.length];
+  const scaleClass = {
+    mega: "text-6xl font-semibold md:text-8xl",
+    wide: "text-4xl font-semibold md:text-6xl",
+    tall: "text-5xl font-semibold [writing-mode:vertical-rl] md:text-7xl",
+    mark: "text-4xl font-semibold md:text-5xl",
+    mono: "font-mono text-[10px] tracking-[0.22em]",
+  };
+
+  return (
+    <div className="bg-base-950 p-px">
+      <div className={`grid grid-cols-3 grid-rows-4 gap-px bg-base-900 ${heights[index % heights.length]}`}>
+        {cells.map((cell, i) => (
+          <div key={`${collection.slug}-${i}`} className={`relative overflow-hidden p-4 ${cell.className}`}>
+            <div className="absolute inset-0 opacity-[0.18] [background-image:linear-gradient(currentColor_1px,transparent_1px),linear-gradient(90deg,currentColor_1px,transparent_1px)] [background-size:28px_28px]" />
+            <div className="absolute bottom-3 left-3 right-3 h-px bg-current opacity-20" />
+            <p className="relative font-mono text-[10px] uppercase tracking-[0.18em] opacity-45">{String(i + 1).padStart(2, "0")}</p>
+            <p className={`relative mt-3 break-words uppercase leading-none ${scaleClass[cell.scale as keyof typeof scaleClass]}`}>
+              {cell.label}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function CreativeCategoryIndex() {
   const ref = useRef<HTMLDivElement>(null);
@@ -47,54 +102,17 @@ export default function CreativeCategoryIndex() {
         <h1 className="text-section">VISUAL CREATIVE</h1>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+      <div className="columns-1 gap-4 sm:columns-2 xl:columns-3">
         {creativeCollections.map((collection, index) => {
-          const preview = collection.items.slice(0, 3);
           return (
             <Link
               key={collection.slug}
               to={`/porto-visual/${collection.slug}`}
               data-cat-card
-              className={`${index === 0 ? "xl:col-span-2" : ""} group overflow-hidden border border-base-900 bg-black/70 transition-[border-color,transform,background-color] duration-700 hover:-translate-y-1 hover:border-base-500 hover:bg-base-950`}
+              className="group mb-4 block break-inside-avoid overflow-hidden border border-base-900 bg-black/70 transition-[border-color,transform,background-color] duration-700 hover:-translate-y-1 hover:border-base-500 hover:bg-base-950"
               data-cursor-label="OPEN"
             >
-              <div className={`grid gap-px bg-base-900 ${index === 0 ? "grid-cols-[1.2fr_0.8fr]" : "grid-cols-2"}`}>
-                <div className="relative overflow-hidden bg-base-950">
-                  {preview[0]?.src && (
-                    <div className={`grid place-items-center ${preview[0].fit === "contain" ? "p-3" : ""}`}>
-                      <img
-                        src={preview[0].src}
-                        alt={`${collection.title} preview`}
-                        loading="lazy"
-                        className={`w-full transition-transform duration-700 group-hover:scale-[1.04] ${preview[0].fit === "contain" ? "object-contain" : "object-cover"} ${index === 0 ? "aspect-[16/10]" : "aspect-[4/5]"}`}
-                        style={{ objectPosition: preview[0].objectPosition }}
-                      />
-                    </div>
-                  )}
-                  {collection.layout === "video" && (
-                    <div className="absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full bg-black/65 text-white backdrop-blur-md">
-                      <Play className="h-4 w-4 fill-current" />
-                    </div>
-                  )}
-                </div>
-                <div className="grid gap-px">
-                  {preview.slice(1).map((item) => (
-                    <div key={item.title} className="overflow-hidden bg-base-950">
-                      {item.src && (
-                        <div className={`grid aspect-square place-items-center ${item.fit === "contain" ? "p-3" : ""}`}>
-                          <img
-                            src={item.src}
-                            alt={`${item.title} preview`}
-                            loading="lazy"
-                            className={`h-full w-full opacity-75 transition-transform duration-700 group-hover:scale-[1.04] group-hover:opacity-100 ${item.fit === "contain" ? "object-contain" : "object-cover"}`}
-                            style={{ objectPosition: item.objectPosition }}
-                          />
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <CollectionPreview collection={collection} index={index} />
 
               <div className="flex min-h-[15rem] flex-col justify-between p-5 md:p-6">
                 <div>

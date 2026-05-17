@@ -36,37 +36,37 @@ export const devProjects: DevProject[] = [
     year: 2026,
     stack: ["Laravel 11", "Next.js 14", "Sanctum", "Tailwind CSS", "TanStack Query", "Recharts", "MySQL"],
     description:
-      "Sistem akademik TKIT Madani Montessori untuk admin, guru, orang tua, PPDB, absensi, jurnal perkembangan, raport, agenda, dan notifikasi.",
+      "Academic system for TKIT Madani Montessori — admin, teachers, parents, enrollment, attendance, development journals, report cards, agenda, and notifications.",
     thumbnail: "/img/madani-nidham/02-dashboard-page.webp",
     gallery: [
       { src: "/img/madani-nidham/02-dashboard-page.webp", title: "Dashboard", type: "app" },
-      { src: "/img/madani-nidham/03-murid-page.webp", title: "Data Murid", type: "app" },
-      { src: "/img/madani-nidham/04-absensi-page.webp", title: "Absensi", type: "app" },
-      { src: "/img/madani-nidham/05-jurnal-page.webp", title: "Jurnal Perkembangan", type: "app" },
-      { src: "/img/madani-nidham/09-raport-page.webp", title: "Raport PDF", type: "app" },
+      { src: "/img/madani-nidham/03-murid-page.webp", title: "Student Data", type: "app" },
+      { src: "/img/madani-nidham/04-absensi-page.webp", title: "Attendance", type: "app" },
+      { src: "/img/madani-nidham/05-jurnal-page.webp", title: "Development Journal", type: "app" },
+      { src: "/img/madani-nidham/09-raport-page.webp", title: "Report Card PDF", type: "app" },
       { src: "/img/madani-nidham/14-ppdb-page.webp", title: "PPDB", type: "app" },
     ],
     repoUrl: "https://github.com/Mubax5/Madani-Nidham",
     projectUrl: "https://github.com/Mubax5/Madani-Nidham",
     ctaLabel: "Open GitHub",
     features: [
-      "Role admin, guru, dan orang tua",
-      "Dashboard statistik sekolah",
-      "Manajemen murid, kelas, dan user",
-      "Absensi batch dan rekap",
-      "Jurnal perkembangan dan area Montessori",
-      "Raport PDF",
-      "Pengumuman, agenda, dan notifikasi",
-      "PPDB publik sampai convert menjadi murid",
+      "Admin, teacher, and parent roles",
+      "School statistics dashboard",
+      "Student, class, and user management",
+      "Batch attendance and recap",
+      "Development journals and Montessori areas",
+      "PDF report cards",
+      "Announcements, agenda, and notifications",
+      "Public enrollment to student conversion",
     ],
     overview:
-      "Madani Nidham adalah sistem akademik untuk TKIT Madani Montessori Islamic School. Phase awal menggabungkan Laravel API, dashboard Next.js, dan integrasi PPDB publik.",
+      "Academic system for TKIT Madani Montessori Islamic School. Initial phase combines a Laravel API, Next.js dashboard, and public enrollment integration.",
     problem:
-      "Aktivitas sekolah seperti absensi, jurnal perkembangan, raport, agenda, dan PPDB perlu dikelola lebih rapi agar admin, guru, dan orang tua memakai satu sumber data.",
+      "School activities like attendance, journals, report cards, agenda, and enrollment needed a single source of truth for admin, teachers, and parents.",
     solution:
-      "Membangun sistem end-to-end dengan API Laravel, autentikasi Sanctum, dashboard Next.js, reporting PDF, dan modul akademik inti yang siap dikembangkan.",
+      "End-to-end system with Laravel API, Sanctum auth, Next.js dashboard, PDF reporting, and core academic modules ready for expansion.",
     flow:
-      "Admin mengelola data sekolah -> Guru mengisi absensi dan jurnal -> Orang tua melihat informasi -> PPDB direview lalu dikonversi menjadi data murid.",
+      "Admin manages school data -> Teachers fill attendance and journals -> Parents view information -> Enrollment reviewed and converted to student records.",
   },
   {
     id: 2,
@@ -77,7 +77,7 @@ export const devProjects: DevProject[] = [
     year: 2026,
     stack: ["Laravel", "Blade", "Tailwind CSS", "Filament", "MySQL", "Vite"],
     description:
-      "Website resmi Madani Montessori Islamic School dengan halaman publik, galeri, agenda, kontak, PPDB, dan Admin CMS untuk update konten tanpa ubah kode.",
+      "Official website for Madani Montessori Islamic School — public pages, gallery, agenda, contact, enrollment, and an Admin CMS for code-free content updates.",
     thumbnail: "/img/madani-montes-cms/01-hero-landing-page.webp",
     gallery: [
       { src: "/img/madani-montes-cms/01-hero-landing-page.webp", title: "Hero Landing", type: "public" },
@@ -122,7 +122,7 @@ export const devProjects: DevProject[] = [
     year: 2026,
     stack: ["Python", "Tkinter", "OpenCV", "SQLite", "TCP Socket", "Raspberry Pi", "JSON"],
     description:
-      "Dashboard PC untuk monitoring mesin sorting ikan bersama mitra Sarva Purwokerto, membaca produksi, kamera, event SQLite, dan perintah Raspberry Pi via TCP WiFi.",
+      "PC dashboard for monitoring a fish sorting machine — production data, camera feed, SQLite events, and Raspberry Pi commands over TCP WiFi.",
     thumbnail: "/img/sarva/01-dashboard-stopped.webp",
     gallery: [
       { src: "/img/sarva/01-dashboard-stopped.webp", title: "Dashboard Standby", type: "app" },
@@ -163,7 +163,7 @@ export const devProjects: DevProject[] = [
     year: 2026,
     stack: ["Next.js", "Supabase", "PostgreSQL", "AI Agent", "WhatsApp Workflow", "Email Workflow"],
     description:
-      "Konsep SaaS AI Admin Autopilot untuk freelancer dan UMKM Indonesia: invoice, reminder pembayaran, deadline, morning brief, dan rekomendasi aksi.",
+      "AI Admin Autopilot SaaS concept for freelancers and small businesses — invoices, payment reminders, deadlines, morning briefs, and action recommendations.",
     thumbnail: "/img/beresin.click/01-landing-page.jpg",
     gallery: [
       { src: "/img/beresin.click/01-landing-page.jpg", title: "Landing Page", type: "public" },
@@ -199,9 +199,10 @@ export const devProjects: DevProject[] = [
     year: 2026,
     stack: ["C#", "Windows Forms", ".NET Framework 4.7.2", "MySQL", "Laragon", "MySql.Data"],
     description:
-      "Aplikasi desktop manajemen klinik untuk reservasi pasien, verifikasi admin, check-in, antrian, pemeriksaan dokter, resep, medical record, dashboard, dan laporan.",
-    thumbnail: "/img/simanik/01-login-page.webp",
+      "Desktop clinic management app — patient reservations, admin verification, check-in, queue, doctor examination, prescriptions, medical records, and reports.",
+    thumbnail: "/img/simanik/02-dashboard-admin.webp",
     gallery: [
+      { src: "/img/simanik/02-dashboard-admin.webp", title: "Dashboard Admin", type: "admin" },
       { src: "/img/simanik/01-login-page.webp", title: "Login Multi-role", type: "app" },
     ],
     repoUrl: "https://github.com/Mubax5/SIMANIK",
@@ -225,5 +226,42 @@ export const devProjects: DevProject[] = [
       "Built a C# Windows Forms app with MySQL data flow for patients, admins, and doctors, including reservation, examination, prescription, records, and reports.",
     flow:
       "Patient reserves -> Admin verifies and checks in -> Doctor examines and gives medicine -> Patient sees history -> Admin reviews reports.",
+  },
+  {
+    id: 6,
+    title: "My Official Portfolio",
+    slug: "my-official-portfolio",
+    type: "Frontend Portfolio",
+    role: "Frontend Developer / Personal Branding",
+    year: 2024,
+    stack: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+    description:
+      "Older personal portfolio published on GitHub Pages, showing early web identity, selected work, and frontend presentation.",
+    thumbnail: "/img/my-official-portfolio/01-hero.webp",
+    gallery: [
+      { src: "/img/my-official-portfolio/01-hero.webp", title: "Hero Section", type: "public" },
+      { src: "/img/my-official-portfolio/02-about.webp", title: "About Section", type: "public" },
+      { src: "/img/my-official-portfolio/03-skills.webp", title: "Skills Section", type: "public" },
+    ],
+    repoUrl: "https://github.com/Mubax5/My-Official-Portofolio",
+    liveUrl: "https://mubax5.github.io/My-Official-Portofolio/",
+    projectUrl: "https://mubax5.github.io/My-Official-Portofolio/",
+    ctaLabel: "Visit Website",
+    features: [
+      "Personal portfolio landing",
+      "GitHub Pages deployment",
+      "Responsive web layout",
+      "Project showcase",
+      "Personal brand presentation",
+      "Static frontend structure",
+    ],
+    overview:
+      "My Official Portfolio is the previous version of the personal portfolio, kept as part of the development archive and frontend progression.",
+    problem:
+      "Needed a simple public web presence to introduce skills, identity, and selected work before the current portfolio direction.",
+    solution:
+      "Built a static frontend portfolio and deployed it through GitHub Pages for a lightweight public showcase.",
+    flow:
+      "Visitor opens portfolio -> Reviews profile and work sections -> Opens selected links -> Continues to GitHub or contact.",
   },
 ];

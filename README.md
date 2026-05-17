@@ -114,7 +114,6 @@ portfolio-mubacs-v.2.0/
 │   ├── components/
 │   │   ├── CapabilityKineticList.tsx
 │   │   ├── CreativeCategoryIndex.tsx
-│   │   ├── CreativeOrganizationIndex.tsx
 │   │   ├── CustomCursor.tsx
 │   │   ├── DevProjectIndex.tsx
 │   │   ├── EditorialGallery.tsx

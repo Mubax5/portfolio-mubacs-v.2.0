@@ -3,9 +3,10 @@ export const profile = {
   alias: "Mubacs",
   handle: "Mubax5",
   role: "Creative Technologist / Web Developer / Visual Designer",
-  tagline: "Mubacs builds quiet things for the web.",
+  tagline: "Mubacs builds quiet things.",
   location: "Indonesia",
   availability: "Available for selected briefs",
+  cv: "/cv/hilmi-mubarok-cv.pdf",
   bio: "Creative technologist who combines web development, interface design, visual systems, product thinking, and motion-aware web interaction.",
   socials: {
     instagram: "https://www.instagram.com/hilmi.m_/",
